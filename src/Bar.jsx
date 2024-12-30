@@ -9,6 +9,7 @@ function Bar() {
     const [showKeccak, setKeccak] = useState(false);
     const [showMD, setMD] = useState(false);
     const [showTimers, setTimers] = useState(false);
+    const [showGraphicals, setGraphicals] = useState(false);
 
     const toggleCryptographic = () => {
         setShowHash((prev) => !prev);
@@ -25,12 +26,15 @@ function Bar() {
     const toggleTimers = () => {
         setTimers((prev) => !prev);
     };
+    const toggleGraphical = () => {
+        setGraphicals((prev) => !prev);
+    };
     return (
         <div className="bar">
             <h3>Web tools</h3>
-            <br />
+            <br/>
             <h4
-                style={{ fontWeight: "bold", cursor: "pointer" }}
+                style={{fontWeight: "bold", cursor: "pointer"}}
                 onClick={toggleCryptographic}
             >
                 Hash functions
@@ -102,9 +106,30 @@ function Bar() {
             {showTimers && (
                 <>
                     <h5><Link style={{textDecoration: 'none', color: 'inherit'}} to="/timeWatch">Time Watch</Link></h5>
-                    <h5><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/stopWatch">Stop Watch</Link></h5>
+                    <h5><Link style={{textDecoration: 'none', color: 'inherit'}} to="/stopWatch">Stop Watch</Link></h5>
                 </>
             )}
+            <br/>
+            <h4
+                style={{fontWeight: "bold"}}
+                onClick={toggleGraphical}
+            >
+                Graphical Tools
+            </h4>
+            {showGraphicals && (
+                <>
+                    <h5><Link style={{textDecoration: 'none', color: 'inherit'}}
+                              to="/imageConverterPNGJPG">PNG-JPG Converter</Link>
+                    </h5>
+                    <h5><Link style={{textDecoration: 'none', color: 'inherit'}}
+                              to="/imageConverterPNGSVG">PNG-SVG Converter</Link>
+                    </h5>
+                    <h5><Link style={{textDecoration: 'none', color: 'inherit'}}
+                              to="/imageConverterJPEGSVG">JPG-SVG Converter</Link>
+                    </h5>
+                </>
+            )}
+
         </div>
     );
 }
