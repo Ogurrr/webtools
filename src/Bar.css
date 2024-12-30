@@ -1,0 +1,13 @@
+.bar {
+    display: flex;
+    flex-direction: column;  /* Ustawiamy kolumnowe ustawienie dla elementów */
+    justify-content: center; /* Wyrównanie tekstu w pionie */
+    background: var(--bs-gray-800);
+    color: var(--bs-secondary-border-subtle); /* Kolor tekstu */
+    height: 100vh;           /* Ustawiamy na 100% wysokości widoku */
+    width: 20%;              /* Szerokość 20% */
+    position: fixed;         /* Ustawienie na stałe w oknie */
+    top: 0;                  /* Ustawiamy na górze */
+    left: 0;                 /* Ustawiamy na lewej krawędzi */
+    text-align: center;      /* Wyśrodkowanie tekstu w poziomie */
+}
